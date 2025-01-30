@@ -22,12 +22,12 @@ let humanScore = 0;
 let tie = 0;
 let humanChoice;
 let computerChoice;
-function getHumanChoice () {
+/*function getHumanChoice () {
     playerMove = prompt("Enter playerMove(\"Rock\",\"Paper\" or \"Scissors\"):");
-    return playerMove;
-}
-humanChoice = getHumanChoice ()
-computerChoice = getComputerChoice ()
+    return playerMove; 
+} */
+humanChoice = getHumanChoice ();
+computerChoice = getComputerChoice ();
 
 function playRound (humanChoice,computerChoice) {
     if (humanChoice == computerChoice) {
