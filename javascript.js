@@ -2,17 +2,17 @@ function getComputerChoice () {
   let computer;
    computer=Math.random();
    if (computer <= 0.333) {
-       return "Rock"
+       return "rock"
    } else if (computer > 0.33 && computer <=0.66) {
-       return "Paper"
+       return "paper"
    } else {
-      return "Scissors"
+      return "scissors"
    }    
 }
 
 
 function getHumanChoice () {
-    playerMove = prompt("Enter playerMove(\"Rock\",\"Paper\" or \"Scissors\"):");
+    playerMove = prompt("Enter playerMove(\"Rock\",\"Paper\" or \"Scissors\"):").toLowerCase ();
     return playerMove;
 }
 
@@ -33,10 +33,10 @@ function playRound (humanChoice,computerChoice) {
     if (humanChoice == computerChoice) {
         console.log(`humanChoice:${humanChoice} computerChoice ${computerChoice}.It's a Tie!`);
         tie++;
-    } else if ((humanChoice == "Paper" && computerChoice == "Rock") || (humanChoice == "Scissors" && computerChoice == "Paper") || (humanChoice == "Rock" && computerChoice == "Scissors")) {
+    } else if ((humanChoice == "paper" && computerChoice == "rock") || (humanChoice == "scissors" && computerChoice == "paper") || (humanChoice == "rock" && computerChoice == "scissors")) {
         console.log(`humanChoice:${humanChoice} computerChoice ${computerChoice}.You Win!!`);
         humanScore++;
-    } else if ((humanChoice == "Paper" && computerChoice == "Scissors") || (humanChoice == "Scissors" && computerChoice == "Rock") || (humanChoice == "Rock" && computerChoice == "Paper")) {
+    } else if ((humanChoice == "paper" && computerChoice == "scissors") || (humanChoice == "scissors" && computerChoice == "rock") || (humanChoice == "rock" && computerChoice == "paper")) {
        console.log(`humanChoice:${humanChoice} computerChoice ${computerChoice}.You Lose!!`);
         computerScore++;
     } else {
