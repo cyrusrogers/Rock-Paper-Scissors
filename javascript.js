@@ -10,17 +10,37 @@ function getComputerChoice () {
    }    
 }
 
-let playerMove;
-computer = getComputerChoice ();
-playerMove = prompt("Enter playerMove(\"Rock\",\"Paper\" or \"Scissors\"):");
-if (playerMove == computer) {
-    console.log(`playerMove:${playerMove} computerMove:${computer}.It's a Tie!`)
 
+function getHumanChoice () {
+    playerMove = prompt("Enter playerMove(\"Rock\",\"Paper\" or \"Scissors\"):");
+    return playerMove;
 }
 
-else if ((playerMove == "Paper" && computer == "Rock") || (playerMove == "Scissors" && computer == "Paper") || (playerMove == "Rock" && computer == "Scissors")) {
-    console.log(`playerMove:${playerMove} computerMove:${computer}.You Win!`)
-} else {
-    console.log(`playerMove:${playerMove} computerMove:${computer}.You Lose!`)
-}
 
+let computerScore = 0;
+let humanScore = 0;
+let tie = 0;
+let humanChoice;
+let computerChoice;
+function getHumanChoice () {
+    playerMove = prompt("Enter playerMove(\"Rock\",\"Paper\" or \"Scissors\"):");
+    return playerMove;
+}
+humanChoice = getHumanChoice ()
+computerChoice = getComputerChoice ()
+
+function playRound (humanChoice,computerChoice) {
+    if (humanChoice == computerChoice) {
+        console.log(`humanChoice:${humanChoice} computerChoice ${computerChoice}.It's a Tie!`);
+        tie++;
+    } else if ((humanChoice == "Paper" && computerChoice == "Rock") || (humanChoice == "Scissors" && computerChoice == "Paper") || (humanChoice == "Rock" && computerChoice == "Scissors")) {
+        console.log(`humanChoice:${humanChoice} computerChoice ${computerChoice}.You Win!!`);
+        humanScore++;
+    } else if ((humanChoice == "Paper" && computerChoice == "Scissors") || (humanChoice == "Scissors" && computerChoice == "Rock") || (humanChoice == "Rock" && computerChoice == "Paper")) {
+       console.log(`humanChoice:${humanChoice} computerChoice ${computerChoice}.You Lose!!`);
+        computerScore++;
+    } else {
+        console.log("Invalid Input.")
+    }
+}
+playRound (humanChoice,computerChoice)
